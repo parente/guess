@@ -1,4 +1,4 @@
 guess
 =====
 
-A demonstration of central repo workflow
+A guessing game.
