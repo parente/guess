@@ -6,8 +6,8 @@ var argv = require('optimist')
     .default('guesses', 3)
     .argv;
 
-var max = argv.max;
-var left = argv.guesses;
+var max = isNaN(argv.max) ? 10 : argv.max;
+var left = isNaN(argv.guesses) ? 3 : argv.guesses;
 var prompt = 'Guess a number between 1 and ' + max + ': ';
 var target = Math.floor(Math.random() * max) + 1;
 
