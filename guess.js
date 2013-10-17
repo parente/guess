@@ -1,7 +1,10 @@
 // quick guessing game
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
-var argv = require('optimist').argv;
+var argv = require('optimist')
+    .default('max', 10)
+    .default('guesses', 3)
+    .argv;
 
 var max = argv.max;
 var left = argv.guesses;
