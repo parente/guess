@@ -1,9 +1,10 @@
 // quick guessing game
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
+var argv = require('optimist').argv;
 
-var max = 10;
-var left = 3;
+var max = argv.max;
+var left = argv.guesses;
 var prompt = 'Guess a number between 1 and ' + max + ': ';
 var target = Math.floor(Math.random() * max) + 1;
 
