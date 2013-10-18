@@ -3,13 +3,15 @@ var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 var argv = require('optimist')
     .default('max', 10)
+    .default('min', 1)
     .default('guesses', 3)
     .argv;
 
 var max = isNaN(argv.max) ? 10 : argv.max;
+var min = isNaN(argv.min) ? 1 : argv.min;
 var left = isNaN(argv.guesses) ? 3 : argv.guesses;
-var prompt = 'Guess a number between 1 and ' + max + ': ';
-var target = Math.floor(Math.random() * max) + 1;
+var prompt = 'Guess a number between ' + min + ' and ' + max + ': ';
+var target = Math.floor(Math.random() * (max - min)) + min;
 
 rl.setPrompt('(' + left + ') ' + prompt);
 rl.prompt();
