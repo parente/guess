@@ -1,5 +1,6 @@
 // quick guessing game
 var readline = require('readline'),
+    colors = require('colors'),
     rl = readline.createInterface(process.stdin, process.stdout);
 var argv = require('optimist')
     .default('max', 10)
@@ -19,19 +20,19 @@ rl.on('line', function(line) {
     var guess = Number(line);
 
     if(guess === target) {
-        console.log('You got it!');
+        console.log('You got it!'.green);
         rl.close();
     } else if(--left === 0) {
         console.log('Sorry. It was ' + target);
         rl.close();
     } else if(guess < target) {
-        console.log('Higher.');
+        console.log('Higher.'.red);
     } else if(guess > target) {
-        console.log('Lower.');
+        console.log('Lower.'.blue);
     }
 
     if(isNaN(guess)) {
-        console.log('Uh ... upwards?');
+        console.log('Uh ... upwards?'.rainbow);
     }
 
     rl.setPrompt('(' + left + ') ' + prompt);

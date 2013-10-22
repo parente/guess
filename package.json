@@ -2,13 +2,14 @@
   "name": "guess",
   "version": "0.0.0",
   "description": "Guessing game",
-  "main": "index.js",
+  "main": "guess.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "optimist": "~0.6.0"
+    "optimist": "~0.6.0",
+    "colors": "~0.6.2"
   }
 }
